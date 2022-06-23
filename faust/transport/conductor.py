@@ -324,6 +324,7 @@ class Conductor(ConductorT, Service):
         await self._subscription_done
 
     async def maybe_wait_for_subscriptions(self) -> None:
+        self._flag_changes()
         if self._subscription_done is not None:
             await self._subscription_done
 
